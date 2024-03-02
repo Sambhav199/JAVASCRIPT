@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arey1 = [1, 20, 22, 24, 5];
+        const arey2 = ['hi', 'hello', 'hey'];
+        const nums = [5,6,7];
+        nums[2] = 99;
+        console.log(nums);
+        function getLastValue(array) {
+        const lastIndex = array.length - 1;
+        return array[lastIndex];
+      }
+      console.log(getLastValue([1, 20, 22, 24, 5]));
+      console.log(getLastValue(['hi', 'hello', 'hey']));
+
+      function swaparray(array) {
+        const lastindex = array.length - 1;
+        const lastvalue = array[lastindex];
+        const firstvalue = array[0];
+        array[0] = lastvalue;
+        array[lastindex] = firstvalue;
+        return array;
+      }
+      console.log(swaparray([1, 20, 22, 24, 5]));
+      console.log(swaparray(['hi', 'hello', 'hey']));
+    </script>
+</body>
+</html>

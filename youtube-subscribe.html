@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Subscribe</title>
+    <style>
+        .subscribe{
+            background-color: blueviolet;
+        }
+        .subscribed{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button class="subscribe" onclick="Subscribe(); ">Subscribe</button>
+    <script>
+       function Subscribe() {
+        const buttonElement = document.querySelector('button');
+        if (buttonElement.innerHTML === 'Subscribe' ) {buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('subscribed')}
+        else {buttonElement.innerHTML = 'Subscribe'; buttonElement.classList.remove('subscribed')}
+       };
+    </script>
+</body>
+</html>

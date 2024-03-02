@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To-Do-list</title>
+</head>
+<style>
+    body{font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;}
+    .list{
+        display: grid;
+        grid-template-columns: 217px 112px 100px;
+    }
+    div{ margin-top: 20px;}
+   .input-to-do{ padding: 10px;}
+   .date{ padding: 10px;}
+   .add{padding-left: 18px; padding-right: 18px ; padding-top: 10px; padding-bottom: 10px;}
+   .delete{padding: 10px;}
+</style>
+<body>
+    <input type="text" placeholder="Type your to do" class="input-to-do">
+    <input class="date" type="date">
+    <button class="add" onclick="addToDo(); ">Add</button>
+    <div class="list"></div>
+    <script>
+        const toDoArray = [];
+        render();
+        function render() {
+            let listtodo = '';
+
+        for (i = 0; i < toDoArray.length; i++ ) { 
+            const value1 = toDoArray[i];
+            const name = value1.name ;
+            const dueDate = value1.dueDate ;
+            const div2 = ` <div>${name}</div> <div>${dueDate}</div> <div><button class="delete" onclick ="toDoArray.splice(${i}, 1); render();">Delete</button></div>`;
+            listtodo += div2;
+           }
+           document.querySelector('.list').innerHTML = listtodo;
+        }
+        
+        function addToDo() {
+           const inputElement= document.querySelector('.input-to-do');
+           const name = inputElement.value;
+           const date = document.querySelector('.date');
+           const dueDate = date.value ;
+           toDoArray.push({name, dueDate})
+           inputElement.value = '';
+           render();
+        }
+    </script>
+</body>
+</html>

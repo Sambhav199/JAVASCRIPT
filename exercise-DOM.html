@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button class="button1">hello</button>
+    <button class="button2">not done yet</button>
+    <input type="text" placeholder="type your name" class="input-name" onkeydown="enteronkeydown(event)">
+    <button class="click" onclick="defineName()" >confirm</button>
+    <p class="name"></p>
+    <input type="text" placeholder="type your name" class="input-name2" onkeyup="input2(event)">
+    <p class="onkeyup1"></p>
+    <script>
+       console.log(document.querySelector('.button1')); 
+       document.querySelector('.button2').innerHTML = 'done';
+
+       function enteronkeydown(event) {
+        if (event.key === 'Enter') {defineName()}
+       }
+
+       function defineName() {
+       const source = document.querySelector('.input-name');
+       let name = source.value;
+       if (name) {document.querySelector('.name').innerHTML = `Hi! ${name}.`}
+       else {document.querySelector('.name').innerHTML = `please type your name first`}
+       }
+       function input2(event) {
+       const text1 = document.querySelector('.input-name2');
+       let text2 = text1.value;
+       document.querySelector('.onkeyup1').innerHTML = text2 ;
+       }
+      
+    </script>
+</body>
+</html>

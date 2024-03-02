@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<link rel="stylesheet" href="calculator.css">
+<body>
+   <div class="div1">
+   <div class="div2">
+        <p class="shown"></p>
+        <button onclick="calculation1('1')">1</button>
+        <button onclick="calculation1('2')">2</button>
+        <button onclick="calculation1('3')">3</button>
+        <button onclick="calculation1('4')">4</button>
+        <br>
+        <button onclick="calculation1('5')">5</button>
+        <button onclick="calculation1('6')">6</button>
+        <button onclick="calculation1('7')">7</button>
+        <button onclick="calculation1('8')">8</button>
+        <br>
+        <button onclick="calculation1('9')">9</button>
+        <button onclick="calculation1('0')">0</button>
+        <button class="bodmas" onclick="calculation1('+')">+</button>
+        <button class="bodmas" onclick="calculation1('-')">-</button>
+        <br>
+        <button class="bodmas" onclick="calculation1('*')">*</button>
+        <button class="bodmas" onclick="calculation1('/')">/</button>
+        <button class="bodmas" onclick="calculation = eval(calculation);
+        showCalculation(); localStorage.setItem('calculation', calculation);">=</button>
+        <button class="clear"  onclick="calculation  = '';  showCalculation(); localStorage.setItem('calculation', calculation);">Clear</button>
+    </div>
+    </div>
+   <script>
+        let calculation =  localStorage.getItem('calculation') || '';
+        showCalculation();
+        function calculation1(value) {
+            calculation += value;
+            showCalculation();
+            localStorage.setItem('calculation', calculation)
+        }
+        function showCalculation() {
+            document.querySelector('.shown').innerHTML = calculation;
+        }
+   </script>
+</body>
+</html>

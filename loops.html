@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (i = 0; i <= 10; i = i+2) {
+            console.log(i);
+        }
+        for (i = 5; i >= 0; i--) {
+            console.log(i);
+        }
+        const x= [1,2,3]
+        const y= [];
+        for (i = 0; i < x.length; i++) {
+        y.push(x[i]+1)
+        }
+        console.log(y);
+        const h = [5,7,8,5,9,6,6]
+        function add1(value){
+            let a = [];
+           for (i = 0; i < value.length; i++)
+           {
+            a.push(value[i]+1)
+           }
+           return a
+        }
+        console.log(add1(h));
+    </script>
+</body>
+</html>
